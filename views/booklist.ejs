@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        table,
+        th,
+        td {
+          padding: 10px;
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book List</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year Written</th>
+            <th>Edition</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        <% data.forEach(item => { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.title %></td>
+                <td><%= item.author %></td>
+                <td><%= item.year_written %></td>
+                <td><%= item.edition %></td>
+                <td><%= item.price %></td>
+                <td><a href="/books/<%= item.id %>">Details</a></td>
+            </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
